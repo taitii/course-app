@@ -1,0 +1,9 @@
+<%= @course.title %>
+<%- @course.students.each do |student| %>
+    <p><%= student.name %></p>
+    <p><%= student.surname %></p>
+    <p><%= course.valid_start_date  %></p>
+<% end %>
+
+<%= render 'add_participants', participant: @participant %>
+
