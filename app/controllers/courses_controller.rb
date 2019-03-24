@@ -7,6 +7,9 @@ class CoursesController < ApplicationController
     # View specific course
     def show
       @course = Course.find(params[:id])
+      course_students = @course.students.pluck(:id) || [] # JA kursam nav neviens students tad atgriež tukšu array
+      student_ids = (Student.all.pluck(:id) || [] ) - course_students # ja nebūs neviens students, tad arī atgriež tuksu array
+      @students = Student.where(id: student_ids)
     end
 
     # Creates new course in database

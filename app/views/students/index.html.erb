@@ -1,3 +1,4 @@
+<div class = "container">
 <h1> Students </h1>
 
 <table>
@@ -5,6 +6,7 @@
     <tr>
       <th>Name</th>
       <th>Surname</th>
+      <th>Course name</th>
     </tr>
   </thead>
 
@@ -13,6 +15,7 @@
     <tr>
       <td><%= student.name %></td>
       <td><%= student.surname %></td>
+      <td><%= student.courses.pluck(:title).join(", ") %></td>
       <td><%= link_to "Show", student_path(student)%></td>
       <td><%= link_to "Edit", edit_student_path(student) %></td>
       <td><%= link_to "Delete", student, method: :delete, data: { confirm: "Are you sure about that?" } %></td>
@@ -26,3 +29,4 @@
 <br>
 
 <%= link_to 'New Student', new_student_path %>
+</div>

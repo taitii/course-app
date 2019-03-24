@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2019_03_21_192113) do
     t.string "description"
     t.datetime "begins_at"
     t.datetime "ends_at"
-    t.integer "min_participants"
-    t.integer "max_participants"
+    t.integer "min_participants", default: 0
+    t.integer "max_participants", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,9 +1,26 @@
 <%= @course.title %>
-<%- @course.students.each do |student| %>
-    <p><%= student.name %></p>
-    <p><%= student.surname %></p>
-    <p><%= course.valid_start_date  %></p>
+<h2> Course participants </h2>
+<%- @course.participants.each do |participant| %>
+    <p>
+        <%= participant.name %> <%= participant.surname %>
+        <%= link_to 'Delete', participant_path(participant), method: :delete, data: { confirm: 'Are you sure?' } %> 
+    </p>
 <% end %>
 
-<%= render 'add_participants', participant: @participant %>
+<br>
+
+<br>
+
+<hr>
+<h2> All students </h2>
+<%- @students.each do |student| %>
+    <p>
+        <%= student.name %> <%= student.surname %>
+        <%= link_to "Add to course", participants_path(course_id: @course.id, student_id: student.id), method: :post %>
+    </p>
+    
+    <br>
+<% end %>
+
+<%= link_to 'Course', students_path %>
 

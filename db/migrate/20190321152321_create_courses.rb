@@ -5,8 +5,8 @@ class CreateCourses < ActiveRecord::Migration[5.2]
       t.string :description
       t.datetime :begins_at
       t.datetime :ends_at
-      t.integer :min_participants
-      t.integer :max_participants
+      t.integer :min_participants, default: 0
+      t.integer :max_participants, default: 0
 
       t.timestamps
     end

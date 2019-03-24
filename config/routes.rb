@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   get "/students", to: "students#index"
   resources :students
 
-  get "/participants", to: "participants#index"
   resources :participants
 end

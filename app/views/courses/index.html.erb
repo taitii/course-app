@@ -1,3 +1,4 @@
+<div class = "container">
 <h1> Courses </h1>
 
 <table>
@@ -17,8 +18,8 @@
     <tr>
       <td><%= course.title %></td>
       <td><%= course.description %></td>
-      <td><%= course.begins_at %></td>
-      <td><%= course.ends_at %></td>
+      <td><%= course.begins_at.strftime("%d/%m/%Y - %H:%M") %></td>
+      <td><%= course.ends_at.strftime("%d/%m/%Y - %H:%M") %></td>
       <td><%= course.min_participants %></td>
       <td><%= course.max_participants %></td>
       <td><%= link_to "Show", course_path(course)%></td>
@@ -33,3 +34,4 @@
 <br>
 
 <%= link_to 'New Course', new_course_path %>
+</div>
